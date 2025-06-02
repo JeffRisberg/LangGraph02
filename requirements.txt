@@ -1,10 +1,10 @@
+fastapi==0.115.12
 langchain==0.3.25
 langchain-community==0.3.24
 langchain_openai==0.3.18
 langchain_core==0.3.63
 langgraph==0.4.7
-pydantic
-python-dotenv
-json5
 langgraph-cli[inmem]
 langgraph-cli==0.2.10
+pydantic==2.11.5
+python-dotenv==1.1.0
