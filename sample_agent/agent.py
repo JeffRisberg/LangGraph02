@@ -29,28 +29,30 @@ def get_weather(location: str):
     return f"The weather for {location} is 70 degrees."
 
 @tool
-def set_skills(skills: str):
+def get_jobs(skill: str):
     """
-    Get the weather for a given location.
+    Get the job for a given skill.
     """
-    if location.lower() == "new york":
-        return "The weather for New York is 75 degrees."
-    elif location.lower() == "los angeles":
-        return "The weather for Los Angeles is 80 degrees."
+    if "math" in skill:
+        return "The best job for you is financial analyst."
+    elif "computer" in skill:
+        return "The best job for you is software developer."
+    elif "communication" in skill:
+        return "The best job for you is teacher."
 
-    return f"The weather for {skills} is 70 degrees."
+    return f"The best job for you is bricklayer or burgerflipper."
 
 
 tools = [
     get_weather,
-    set_skills
+    get_jobs
 ]
 
 
 # Bind the tools to the model
 model_with_tools = model.bind_tools(tools,
-    parallel_tool_calls=False,
-)
+                                    parallel_tool_calls=False,
+                                    )
 
 
 class AgentState(TypedDict):
